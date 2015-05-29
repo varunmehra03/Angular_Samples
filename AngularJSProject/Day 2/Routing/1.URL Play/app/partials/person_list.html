@@ -1,0 +1,24 @@
+<h3>Person List</h3>
+<div ng-controller="IndexController">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Actions</td>
+                <td>Search on ID and Age</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in persons">
+                <td>{{person.id}}</td>
+                <td>{{person.name}}</td>
+
+                <td><a href="#!persons/{{person.id}}">Details</a></td>
+ <td>
+        <a href="#!persons/{{person.id}}/{{person.age}}">id and age</a>
+ </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

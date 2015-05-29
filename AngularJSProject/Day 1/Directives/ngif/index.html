@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well">
+    <h1>ng-if demo</h1>
+    <hr />
+    <div ng-app="myApp">
+        <div ng-controller="Ctrl">
+             <input ng-model="data " type="text" />
+            <input type="checkbox" ng-model="show" />Show
+            <div ng-if="show">
+                <h1>Dynamic DOM based on condition</h1>
+                Data is : {{ sdata.val }}
+                <input ng-model="data "  type="text" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <hr />
+    <h1>ng-switch demo</h1>
+    <div ng-app="myApp">
+        <div ng-controller="Ctrl">
+            Scope id: {{ $id }}
+            <input ng-model="sdata.val" />
+            <div ng-switch on="sdata.val">
+                <div ng-switch-when="123">
+                    Scope id: {{ $id }}
+                    <input ng-model="sdata.val" />
+                </div>
+                <div ng-switch-default>
+                    Scope id: {{ $id }}
+                    Default
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

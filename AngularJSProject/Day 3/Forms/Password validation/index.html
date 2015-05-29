@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Password validation</title>
+
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+    
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="checkController" class="well" >
+    <h3 class="text-warning">Confirm your credentials</h3>
+    <form name="myForm">
+        <label for="pw1">Username : </label>
+        <input type="text" id="user" name="user"  ng-required="" />
+        <label for="pw1">Set a password:</label>
+        <input type="password" id="pw1" name="pw1" ng-model="pw1" ng-required="" />
+        <label for="pw2">Confirm the password:</label>
+        <input type="password" id="pw2" name="pw2" ng-model="pw2" ng-required="" pw-check="pw1" />
+        <div class="msg-block" ng-show="myForm.$error">
+            <span class="msg-error" ng-show="myForm.pw2.$error.pwmatch">Passwords don't match.</span>
+        </div>
+    </form>
+
+    <script src="../../../Scripts/angular.js"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

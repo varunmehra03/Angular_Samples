@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <!--<script src="scopeinheritance.js"></script>-->
+    <script src="sharingdata.js"></script>
+    <script src="WithFilter.js"></script>
+</head>
+<body>
+    <!--scope inheritance-->
+    <!--<div ng-controller="FirstCtrl">
+        <input type="text" ng-model="message1" />
+        <h2>{{message1}}</h2>
+        
+        <div ng-controller="SecondCtrl">
+            <input type="text" ng-model="message1" />
+            <h2>{{message1}}</h2>
+        </div>
+    </div>-->
+
+     <!--Sharing service  by controllers-->
+         <div ng-controller="FirstCtrl">
+                 <input type="text" ng-model="data.message" />
+                <h2>{{data.message}}</h2>
+        </div>
+
+        <div ng-controller="SecondCtrl">
+                  <input type="text" ng-model="data.message" />
+                 <h2>{{data.message}}</h2>
+
+            <div>Reverse behavior from secondCtrl</div>
+            <h2>{{reversedMessage()}}</h2> 
+
+            <div>Reverse custom filter</div>
+                <h3>{{data.message | reverse}}</h3>                            
+           </div>    
+</body>
+</html>

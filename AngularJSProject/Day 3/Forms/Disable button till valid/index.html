@@ -1,0 +1,51 @@
+<html>
+  <head>
+
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+
+    <style type="text/css">
+      input.ng-invalid.ng-dirty {
+        background-color: red;
+      }
+      input.ng-valid.ng-dirty {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+    <!--disable the Submit button as long as the form contains invalid data.-->
+
+  <body ng-app="MyApp" class="well">
+    <div ng-controller="User">
+      <form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
+        <label>Firstname</label>
+        <input name="firstname" type="text" ng-model="user.firstname" required/>
+        <p ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</p>
+        <label>Lastname</label>
+        <input type="text" ng-model="user.lastname" required/>
+        <label>Age</label>
+        <input type="text" ng-model="user.age"/>
+        <br>
+
+ <!--         Use the $form.invalid state in combination with a ng-disabled directive.-->
+
+        <button ng-disabled="form.$invalid" 
+                class="btn">Submit</button>
+      </form>
+
+      User Model: {{user}}
+      <br>
+      Form was submitted: {{wasSubmitted}}
+      <br>
+      Firstname input valid: {{form.firstname.$valid}}
+      <br>
+      Firstname validation error: {{form.firstname.$error}}
+      <br>
+      Form valid: {{form.$valid}}
+      <br>
+      Form validation error: {{form.$error}}
+    </div>
+      <script src="../../../Scripts/angular.js"></script>
+   
+      <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Animation</title>   
+
+    <link href="style1.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-app="myApp">
+        <div >
+            <label>
+                <button ng-click="boxHidden=!boxHidden">
+                    Toggle Visibility
+                </button>
+            </label>
+            <div class="animated-container" ng-hide="boxHidden">
+                Awesome text!
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-animate.js"></script>
+  
+   
+   
+</body>
+</html>

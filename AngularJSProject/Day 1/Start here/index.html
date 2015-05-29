@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <title>My First AngularJS App</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<!--ng-init initializes  data models: the data to be presented on the UI-->
+<body ng-init="salary=10000;percentage=5" class="well" >
+    <header>
+        <h2 class="text-success">Investment Plan</h2>
+    </header>
+    <hr />
+    <br />
+    Your Salary?
+    <input type="text" ng-model="salary">
+
+    <!--ng-model binds an input field with model data. This establishes a two-way  binding-->
+    <br />How much should you invest in gadgets?
+    <input type="text" ng-model="percentage">%
+
+
+    <!--{{}} is called an expression, which is composed of one or more data models.
+    The purpose of an expression is binding / syncing the model data to the view unidirectionally-->
+
+    <br /><br/>
+    The amount to be spent in shopping will be:
+    <span class="text-info">  {{salary*percentage*0.01}}  </span>
+    
+    <script src="../../Scripts/angular.js"></script>
+</body> 
+</html>

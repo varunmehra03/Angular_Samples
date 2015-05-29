@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../../../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+            .controller('myCtrl', function ($scope) {
+                $scope.value = 1;
+
+                $scope.incrementValue = function(increment) { 
+                    $scope.value += increment;  
+                }
+               
+            })
+
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ['myApp']);
+        });
+    </script>
+</head>
+<body class="well">
+    <div ng-controller="myCtrl"> 
+     Value is <div class="text-success"       
+            ng-init="incrementValue(10)">{{value}}
+        </div>
+    </div>
+
+</body>
+</html>

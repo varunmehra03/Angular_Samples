@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Understanding Hashbang</title>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script>
+
+        window.addEventListener('hashchange', function () {
+            console.log('Hash changed    -  ' + window.location.hash)
+            // in url change  #bookmark to    #/bookmark/3    and observe
+
+            // so bookmark  is just a string
+
+            if (window.location.hash === '#/bookmark/1') {
+                console.log(" I am Register Page");
+            }
+            if (window.location.hash === '#/bookmark/2') {
+                console.log("I am Products page");
+            }
+            // This is how angule.route.js ($RouteProvider) resolve route
+            // $location.path() grabs # fragment in angular js
+        });
+
+        var myApp = angular.module('myApp', []);
+        myApp.controller('mainController', ['$scope', '$location', '$log', function ($scope, $location, $log) {
+            $log.info($location.path());
+            // click on Go to Bookmark and observe in debugger
+        }]);
+
+    </script>
+</head>
+<body ng-controller="mainController">
+    <h2>How Routing Works?</h2>
+    <hr />
+    <div>
+        <a href="#bookmark">Go to Bookmark</a>
+        <!--<a href="#/bookmark/1">Go to Bookmark   - </a>-->
+
+        <a href="#/bookmark/2">Go to Products page</a>
+    </div>
+
+    <h3 style="background-color:pink"># identifies fragement in html document</h3>
+    <p>
+        An exploration of the future of web technologies and browser capabilities would not
+        be complete without covering the tools and techniques available to enable location
+        awareness.
+    </p>
+
+    <p>
+        Location-aware web applications provide content, functionality, and services based
+        on the cooperative detection of the user’s physical location. These applications can
+        then provide the user with real-time filtering of online information relevant to his current
+        location, such as place markers indicating the user’s location within a map, local
+        consumer reviews, local coupons and offers, and even relevant traffic and public
+        transportation notices.
+    </p>
+    <p>
+        An exploration of the future of web technologies and browser capabilities would not
+        be complete without covering the tools and techniques available to enable location
+        awareness.
+    </p>
+
+    <p>
+        Location-aware web applications provide content, functionality, and services based
+        on the cooperative detection of the user’s physical location. These applications can
+        then provide the user with real-time filtering of online information relevant to his current
+        location, such as place markers indicating the user’s location within a map, local
+        consumer reviews, local coupons and offers, and even relevant traffic and public
+        transportation notices.
+    </p>
+    <p>
+        Location-aware web applications provide content, functionality, and services based
+        on the cooperative detection of the user’s physical location. These applications can
+        then provide the user with real-time filtering of online information relevant to his current
+        location, such as place markers indicating the user’s location within a map, local
+        consumer reviews, local coupons and offers, and even relevant traffic and public
+        transportation notices.
+    </p>
+    <p>
+        As you might imagine, the opportunities are not just limited to enhancing the life of
+        the consumer. Given real-time location data of potential consumers and their friends,
+        retailers can also create highly targeted, location-specific marketing campaigns for
+        both digital and physical products
+    </p>
+
+    <p>
+        As you might imagine, the opportunities are not just limited to enhancing the life of
+        the consumer. Given real-time location data of potential consumers and their friends,
+        retailers can also create highly targeted, location-specific marketing campaigns for
+        both digital and physical products
+    </p>
+
+    <p id="bookmark">
+        <strong style="background-color:yellow">
+            These applications also enable users to provide their location to friends in a social
+            network and vice versa, creating possibilities for meetups and blended online and
+            physical interaction.
+        </strong>
+    </p>
+</body>
+</html>
+

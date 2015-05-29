@@ -1,0 +1,26 @@
+﻿<html ng-app="countryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>using ng-src to avoid server postback</title>
+
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body ng-controller="CountryCtrl" class="well">
+    <table border="1" style="background-color:yellow"
+            class="table-striped table-hover">
+      <tr>
+        <th>Country</th>
+        <th>Population</th>
+        <th>Flag</th>
+      </tr>
+      <tr ng-repeat="country in countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+        <td><img ng-src="{{country.flagURL}}" width="100"></td>
+      </tr>
+    </table>
+
+      <script src="../../../Scripts/angular.js"></script>
+      <script src="app.js"></script>
+  </body>
+</html>

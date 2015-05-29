@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-messages.js"></script>
+    <script>
+        angular.module('myApp', ['ngMessages']);
+    </script>
+</head>
+<body ng-app="myApp" class="well">
+    <h1>ng-message of Angular js 1.3</h1>
+    <hr />
+    <div>Only a single error message per ng-messages block is displayed at a time, and the error
+message priority is defined by the order in which the ng-message entities are ordered
+within the block. This lets you afford a high degree of control over how and when error
+messages are displayed.</div>
+
+    <div ng-app="myApp">
+        <form name="playerForm">
+            <input type="text"
+                   name="playerName"
+                   ng-model="player.name"
+                   minlength="4"
+                   required />
+            <!-- ng-messages block will handle the field $error object -->
+            <div ng-messages="playerForm.playerName.$error">
+                <!-- each ng-message handles a single error condition -->
+                <div ng-message="required">
+                    <span class="text-danger"> Player name is required</span>
+                </div>
+                <div ng-message="minlength">
+                   <span class="text-danger" >A player name must be at least 4 characters</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="App"
+<head>
+    <title>Custom filter</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well" ng-controller="empCtrl" style="margin:50px">
+    <h3 class="text-error">Custom filters in Angular JS</h3>
+     
+<p class="text-info" >Enter your comment:</p>
+<input type="text" ng-model="comment" /> 
+  <p class="text-success">{{comment | charLimit:5}}</p>  
+
+
+
+
+
+  <p class="text-info">Enter Experience : </p>  
+<input type="number" ng-model="mydata.str" />
+    <!--<ul ng-repeat="emp in employees |canJoinInProject:5">
+        <li> {{emp.name}} -  {{emp.exp}}</li>
+    </ul>-->  
+
+    <h4>Below employees can join the project : </h4>
+    <table class="table-bordered table-hover table-striped">
+        <tr ng-repeat="emp in employees |canJoinInProject:mydata.str">
+            <td class="text-error">
+                {{emp.name}}  -  ({{emp.exp}})<br />
+                <strong>Skills:</strong>
+                <ul ng-repeat="sk  in emp.skills">
+                    <li class="text-success">{{sk}}</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br/>
+  <h5 class="text-error">Open Debugger (F12), select Angular js tab , check Enable, 
+    <br/>click Performance and press F5  and observe the performance  as you filter </h3>
+      <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

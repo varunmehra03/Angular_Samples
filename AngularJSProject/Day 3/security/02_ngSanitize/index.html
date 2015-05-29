@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="../../../Scripts/angular-sanitize.js"></script>
+      <script src="app.js"></script>
+</head>
+<body ng-app="expressionsEscaping" 
+      ng-controller="ExpressionsEscapingCtrl">
+
+   No output for this: <p ng-bind="msg"></p>  
+
+    <!--selectively sanitize certain HTML tags,
+    while allowing others to be interpreted by a browser, -->
+    <!--<p ng-bind-html="msg"></p>-->
+
+    <!-- It might be a good option for cases where we want to allow some HTML tags
+    to be entered by users.-->
+    <p ng-bind-html-unsafe="msg"></p>
+    
+   <p ng-bind-html="safeMsg"</p>
+
+
+</body>
+</html>

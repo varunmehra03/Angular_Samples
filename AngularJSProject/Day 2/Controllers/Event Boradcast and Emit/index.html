@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <title>Finance Meter</title>
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body class="well">
+    <header>
+        <h2 class="text-success">Broadcasting and Emitting events</h2>
+    </header>
+    <hr />
+    <br />
+    <div ng-controller="MessageController">
+        <h4>Messages:</h4>
+        <ul>
+            <li ng-repeat="message in messages">
+                {{message.text}}
+            </li>
+        </ul>
+        <div ng-controller="StatsController">
+            <h4>Stats:</h4>
+            <div>{{messages.length}} Message(s)</div>
+            <div>
+           Status: <span style="color: {{statusColor}}"> {{status}} </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>

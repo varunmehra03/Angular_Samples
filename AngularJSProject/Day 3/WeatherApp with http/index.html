@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>Weather App</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp" class="well" ng-controller="WeatherController">
+    <h1>Weather App in Angular JS using $http promise API</h1>
+    City :
+    <input type="text" ng-model="city" placeholder="Enter city name  here" />Country:
+    <br />
+    Country: <input type="text" ng-model="country"
+                    placeholder="Enter country  name here" /><br />
+    <button ng-click="getWeather()">Get Weather</button>
+    <br />
+    <br />
+    <fieldset style="background-color:yellow">
+        <h2>Weather Condition:{{weatherDescription}}</h2>
+    </fieldset>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="WeatherController.js"></script>
+</body>
+</html>

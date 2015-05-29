@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="App"
+<head>
+    <title>Employee skills</title>
+    <link href="../../../CSS/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well" ng-controller="empCtrl" style="margin:50px">
+     <table class="table-bordered table-hover table-striped" >
+         <tr ng-repeat="emp in employees | orderBy:name">
+             <td  class="text-error">{{emp.name | uppercase}}<br/>
+             <strong>Skills:</strong>
+                   <ul ng-repeat="sk  in emp.skills">
+                        <li class="text-success">{{sk}}</li></ul>
+             </td>
+         </tr>
+     </table>
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <title>Manual bootstrap</title>
+
+    <!-- this css rule is provided in the angular.js file, but
+    if AngularJS is not included in define this style yourself in head -->
+
+        <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak,.x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+    </head>
+<body ng-cloak ng-init="company='Bank of America' ">
+    <h1>Best Practise : One module, one file, and one name</h1>
+    <hr />
+    <h1>{{company}}</h1>
+    <div ng-controller="Ctrl">
+            <h2>{{ mydata }}</h2>
+    </div>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

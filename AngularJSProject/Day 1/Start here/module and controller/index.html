@@ -1,0 +1,40 @@
+﻿<html >
+  <head>
+    <meta charset="utf-8">
+    <title>Initializing the model using an Angular controller, defined within an Angular module.
+</title>
+
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+      <script src="../../../Scripts/angular.js"></script>
+  <script>
+           // Define module and controller
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('nameController', function ($scope) {
+          //model
+        $scope.name = 'Murthy';
+        $scope.email = 'Sriram@yahoo.com';
+
+        $scope.$watch('name', function (newValue, oldValue) {
+            console.log('new value is ' + newValue);
+        });
+
+        setTimeout(function () {
+            $scope.address = 'Hyderabad';
+            $scope.$apply();
+        }, 5000);
+      });
+    </script>
+  </head>
+  <body ng-app="nameApp" class="well" ng-controller="nameController">
+   <div class="text-info"> Employee name: </div>
+      <input ng-model="name" type="text"/>
+    <br>
+      <div class="text-info"> Email ID: </div>
+     <input ng-model="email" type="text"/>
+    <br> 
+      <div class="text-success">
+      Emp Information :  {{name | uppercase}}  -  {{email}} </div>
+      <br />
+     <div class="text-danger">address: {{address}}</div>       
+      </body>
+</html>

@@ -1,0 +1,22 @@
+﻿<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Removing names from a list using ng-click.</title>   
+
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body ng-controller="NameCtrl"  class="well">
+      
+    <ul>
+      <li ng-repeat="name in names">{{name}}
+      <a href="#" ng-click="removeName(name)" 
+             class="text-error"> [X]</a></li>
+    </ul>
+    <form ng-submit="addName()">
+      <input type="text" ng-model="newName">
+      <input type="submit" value="add">
+    </form>
+      <script src="../../../Scripts/angular.js"></script>
+      <script src="app.js"></script>
+  </body>
+</html>

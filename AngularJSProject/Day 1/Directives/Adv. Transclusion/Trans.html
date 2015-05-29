@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="trascludemovie">
+<head>
+    <title>Transclude Demo</title>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="../../../Scripts/angular-route.js"></script>
+    <script src="Transcludescript.js"></script>
+    <style>
+        .twoWayBinding {
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" ng-model="name" placeholder="your name">
+        <select ng-model="movie">
+            <option value="angel">Angel</option>
+            <option value="guru">Guru</option>
+        </select>
+        <input type="number" ng-model="friendscount" placeholder="with how many friends" .>
+
+        <div movieinfo="movie" ng-show="movie">
+            <div>
+                Hi.. I'am &nbsp; <b>{{name}}</b> , and going to watch<b> &nbsp; {{movie}}</b>
+                with<b>&nbsp;&nbsp;{{friendscount}} &nbsp;friends</b>
+
+
+
+
+
+
+
+               <br /> <img src="{{movie}}.jpg" width="200" height="200" alt="{{movie}}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

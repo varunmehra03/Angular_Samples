@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <title>My First AngularJS App</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+
+<body ng-init="name ='AngularJS' ">
+    <header>
+        <h2 class="text-success">Two Way Data Binding</h2>
+    </header>
+    <hr />
+    <br />
+
+    <!--ng-model directive to our input element. This is the basis     of two-way binding-->
+
+    <input type="text" ng-model="name" />
+
+    <div><h2>Hello, {{name}}</h2></div>
+
+    First Name: (blur) : 
+    <input type="text" ng-model="firstname" 
+           ng-model-options="{updateOn: 'blur'}" />{{firstname}}
+    <br /><hr />
+    Last name : (blur mousedown) 
+    <input type="text" ng-model="lastname"
+            ng-model-options="{updateOn: 'blur mousedown'}" />
+    {{lastname}}
+
+    <br /><hr />
+    Job (Debounce with blur) : <input type="text" ng-model="job" ng-model-options="{updateOn: 'blur', debounce:100}" />
+    <!--The above snippet introduces a100 millisecond delay while updating the model. If
+    you want different delay periods for different events-->
+
+    <script src="../../Scripts/angular.js"></script>
+
+
+</body>
+</html>

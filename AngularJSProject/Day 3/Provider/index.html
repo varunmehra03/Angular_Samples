@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>Working with Providers</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../../Scripts/angular.js"></script>
+
+    <script src="main.js"></script>
+    <!--<script src="greetProvider.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>-->
+</head>
+<body ng-app="app" class="well" ng-controller="movieController">
+
+    <h1>Understanding provider</h1>
+    <hr />
+    <h2>Movie details</h2>
+    <ul>
+        <li ng-repeat="movie in movies">
+        {{movie.title}} - {{movie.role}} - {{movie.released}}</li>
+    </ul>
+    </body>
+</html>

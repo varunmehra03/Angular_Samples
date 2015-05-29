@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+
+    <script src="../../Lib/jquery-1.8.2.js"></script>
+    <title>Learning Debugging in Javascript</title>
+        <style>
+        .blue
+        {
+            border:2px solid double;
+            font-size:22px;
+            background-color:blue;
+            color:yellow
+        }
+        .big{font-size:33px}
+    </style>
+
+    <script>
+        $(function () {
+            console.log("Jquery is loaded");
+            $('#myInput').on('focus', function () {alert('got focus') });
+            $('#myInput').on('blur', function () { alert("lost focus"); });
+            $('#myInput').on('click', function () { alert("Text box clicked"); });
+          })
+    </script>
+    <script type="text/javascript">
+        function displayHello(val) {
+            var name = "";
+            name = prompt("Enter Your name ", "Murthy");
+            document.write("Thanks for entering Name");
+        }
+        function Greet() {// error here
+            alert("welcome Mr:"+name)
+        }
+    </script>
+</head>
+<body>
+    <div class="big">Debugging Javascript</div>
+    <p class="blue">Testing Javascript with breakpoints</p>
+    <script type="text/javascript">
+        document.write("Welcome to Javascript world </br>");
+        displayHello("noname");
+    </script>
+    <br />
+    mail : <input type="text" id="myInput" /></br>
+    <input class="blue" type="button" value="submit" onclick="greet()"/>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <title>Search</title>
+    <link href="../../../CSS/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well" style="margin:70px">
+
+    <div  ng-controller="empCtrl">
+        <input type="text" ng-model="myFilter.str" />
+        <table class="table-bordered table-striped table-hover" border="2">
+            <tr 
+                ng-repeat="emp in employees | filter:myFilter.str  | orderBy:name |limitTo:4">
+                <td class="text-error">{{emp.name}} </td>
+                <td >{{emp.skills}}</td>
+            </tr>
+        </table>
+           
+       
+    </div>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

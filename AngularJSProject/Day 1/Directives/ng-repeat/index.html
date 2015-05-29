@@ -1,0 +1,24 @@
+﻿<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Looping over lists in templates using ng-repeat.</title>
+
+      <script src="../../../Scripts/angular.js"></script>
+
+      
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('nameController', function ($scope){
+        $scope.names = ['Murthy', 'Rama', 'Mallika'];
+      });
+    </script>
+  </head>
+  <body ng-controller="nameController">
+    <ul>
+      <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+
+      
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+﻿ [
+        {
+            name: 'Murthy',
+            skills: ['Dotnet', 'Ext js', 'node js', 'angular js'],
+            exp:12
+        },
+        {
+            name: 'Rama',
+            skills: ['Java', 'can js', 'node js', 'backbone js'],
+            exp: 18
+        },
+        {
+            name: 'Mallika',
+            skills: ['Dotnet', 'require js', 'ember js', 'angular js'],
+            exp: 20
+        },
+        {
+            name: 'Ramana',
+            skills: ['java', 'C++', 'node js'],
+            exp: 5
+        },
+        {
+            name: 'Kavitha',
+            skills: ['Dotnet', 'Ext js', 'node js', 'angular js'],
+            exp: 13
+        }, {
+            name: 'Kirthi',
+            skills: ['C++', 'oracle'],
+            exp: 17
+        }
+    ]

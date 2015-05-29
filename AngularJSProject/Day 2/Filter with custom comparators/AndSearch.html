@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>And Search filter</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well">
+    <div ng-app="myApp">
+        <div ng-controller="Ctrl">
+            <!--$; this is done merely to assign the wildcard search to the
+            entire search object so that it does not interfere with other assigned search attributes-->
+           Name :<input ng-model="search.$" required />
+           Experience:<input ng-model="search.number" required />
+
+            <!--A true  value passed will enable exact matches:-->
+            <p ng-repeat="user in users | filter:search:true">
+                {{ user.firstName}} {{ user.lastName }}
+            </p>
+        </div>
+    </div>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

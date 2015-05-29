@@ -1,0 +1,27 @@
+<html>
+  <head>
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+      <script src="../../../Scripts/angular.js"></script>
+      <script src="app.js"></script>
+    <style>
+      .nested {
+        border: 1px solid red;
+        margin-left: 2em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+<!--    Service allows us to share business logic between controllers.-->
+
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl">
+      <ul ng-repeat="user in users">
+        <li>{{user}}</li>
+      </ul>
+            <div class="nested" ng-controller="anotherCtrl">
+                 First user: {{firstUser}}
+             </div>
+    </div>     
+  </body>
+</html>

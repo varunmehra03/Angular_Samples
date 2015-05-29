@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Animation</title>   
+
+    <link href="style1.css" rel="stylesheet" />
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-animate.js"></script>
+ 
+
+    <script>
+        angular.module('myApp', ['ngAnimate'])
+            .controller('animController', function ($scope) {
+                $scope.displayToggle = true;
+    });
+    </script>
+</head>
+<body>
+    <div ng-app>
+        <div >
+            <button ng-click="displayToggle=!displayToggle">
+                Toggle Visibility
+            </button>
+            <div class="container">
+                <div class="slide-tile"
+                     ng-class="{'slide-up': !displayToggle}">
+                    Slide me up and down!
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+   
+   
+   
+</body>
+</html>

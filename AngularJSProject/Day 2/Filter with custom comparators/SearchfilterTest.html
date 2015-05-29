@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>And Search filter</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="well">
+    <h3 class="text-danger">Custom Search Filter by Murthy</h3>
+    <hr/>
+    <div ng-app="myApp">
+        <div ng-controller="Ctrl">
+          Name :  <input ng-model="search.name"  required />
+         Experience :   <input ng-model="search.number"    required />
+            <p ng-repeat="user in users | userSearch : search">
+                {{ user.firstName }} {{ user.lastName }}
+            </p>
+        </div>
+    </div>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="SearchFilter.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+    <style>
+        .mycolor {
+            background-color: yellow;
+        }
+    </style>
+
+    
+</head>
+<body ng-app="twitterApp">
+    <div ng-controller="tweetsCtrl">
+   
+       <!--best approach - Directive is reusable-->
+        <div enter="loadMoreTweets()">click me to load  more tweets</div>
+        <div enter="deleteTweets()">click to delete tweets</div>
+    </div>
+
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

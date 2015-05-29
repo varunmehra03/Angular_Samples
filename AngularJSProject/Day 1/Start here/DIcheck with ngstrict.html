@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+    <script src="../../Scripts/angular.js"></script>
+    <script>
+
+        //The ng-strict-di directive is new and extremely simple to understand. When declaring
+        //the parent DOM node for your application, if ng-strict-di is included in that element,
+
+
+        //If you try to load the page in your browser, you will be greeted with the following error:
+        // Error: [$injector:strictdi] function($provide) is not using explicit
+        //      annotation and cannot be invoked in strict mode
+
+        angular.module('myApp', [])
+        .controller('SimpleController', function ($scope)
+        {
+            $scope.name = "murthy";
+            
+        });
+
+        angular.module('diApp', [])
+        .controller('DIController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+            
+        }]);
+    </script>
+</head>
+<body >
+    <h1>ng-strict  DI</h1>
+
+    <div ng-app="myApp" ng-strict-di>
+        <div ng-controller="SimpleController"></div>
+    </div>
+    <div ng-app="diApp" ng-strict-di>
+        <div ng-controller="DIController"></div>
+    </div>
+
+</body>
+</html>

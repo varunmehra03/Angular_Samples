@@ -1,0 +1,36 @@
+﻿<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Changing scope values asynchronously - updates propagate .apply().</title>
+
+      <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+      <script src="../../../Scripts/angular.js"></script>
+   
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('nameCtrl', function ($scope){
+        $scope.name = 'Murthy';
+
+        $scope.$watch('name', function(newValue, oldValue){
+          console.log('new value is ' + newValue);
+        });
+
+        setTimeout(function(){
+          $scope.address = 'Hyderabad';
+          $scope.$apply(); 
+        }, 5000);
+      });
+    </script>
+  </head>
+
+<body class="well" ng-controller="nameCtrl">
+    <div class="text-info"> Employee name: </div>
+    <input ng-model="name" type="text" />
+    <br>
+    <div class="text-info"> Email ID: </div>
+    <input ng-model="email" type="text" />
+    <br>
+    <div class="text-success">Emp Information : 
+           {{name |uppercase}} {{email}} </div>
+</body>
+</html>

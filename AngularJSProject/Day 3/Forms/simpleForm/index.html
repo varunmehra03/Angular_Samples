@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+</head>
+<body ng-controller="UserController">
+
+    <!--1. Loop through the countries array present in $scope and in each loop assign the
+    current object to the variable country.
+    2. Create an <option>
+        element. The value attribute of the element should be country.id.
+        The actual label that the users will see should be country.desc.-->
+
+    <form name="myform">
+        <select name="country" ng-model="user.country"
+                ng-options="country.id as country.desc for country in countries"></select>
+    </form>
+    <div>Selected Country: {{user.country}}</div>
+    <br />
+    <form>
+        Hey, what do you love?
+        <input type="radio" ng-model="user.choice" value="Coffee" />Coffee
+        <input type="radio" ng-model="user.choice" value="Beer" />Beer
+        <br />
+        <div>I love: {{user.choice}}</div>
+
+        <br />
+        </form>        
+            <!--<input type="checkbox" ng-model="user.choice" ng-true-value="yes" ng-false-value="no" />Coffee-->
+ 
+</body>
+
+<script src="../../../Scripts/angular.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

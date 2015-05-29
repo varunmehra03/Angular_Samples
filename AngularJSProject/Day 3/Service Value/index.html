@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>Service Value</title>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Service Value</h3><hr />
+
+    <div ng-app="myApp">
+        <div ng-controller="Ctrl">
+            <button ng-click="update()">Show Name with experience</button>
+          Data :   {{ data.name }}  Experience :  #{{ data.experience }}  
+            
+        </div>
+    </div>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

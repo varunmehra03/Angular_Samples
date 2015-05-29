@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+
+    <!--Writing    <title ngbind="title"></title> is same as writing <title>{{title}}</title>
+    with one small difference. If you use the later one, by the time AngularJS replaces
+    the expression {{title}} with the actual model value, the browser will have
+    displayed the raw text {{title}} for a fraction of second already. To prevent
+    that we can use ng-bind.   We can also use ng-cloak  to prevent displaying non-html temporarily -->
+
+    <title ng-bind="title"></title>
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+    
+</head>
+
+<body ng-controller ="SiteController" class="well">
+    <header>
+        <h2 class="text-success">Scope Inheritance</h2>
+       
+    </header>
+    <hr />
+    <br />
+    <!--A watcher monitors model changes and takes action in response.-->
+    <span>{{publisher}} excels in {{type}} books</span>
+
+    <div ng-controller="BookController">
+        <h3>Some of the popular books from {{publisher}}</h3>
+        My Wish List Count: {{wishListCount}}
+        <ul>
+            <li ng-repeat="book in books">
+                {{book}}. <a href="#" ng-click="addToWishList(book)">  Add to  wish List
+                </a>
+            </li>
+        </ul>
+    </div>
+
+        <script src="../../../Scripts/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="controller.js"></script>
+    </div>
+</body>
+</html>

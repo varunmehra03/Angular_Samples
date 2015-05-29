@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script src="../../Scripts/angular.js"></script>
+   
+    
+    <script src="httpbasics.js"></script>
+</head>
+<body ng-app="httpbasics" ng-controller="HttpBasicsCtrl">
+<hr>
+<div>
+    <button ng-click="getName()">$http GET name</button>
+      <pre>Hello, {{data.name}}! </pre>
+</div>
+<hr>
+
+
+<div>CORS :
+    <button ng-click="queryUsersGeneric()">$http GET generic</button>
+    <pre>{{usersGeneric | json}}</pre>
+</div>
+<hr>
+<div>
+    <button ng-click="addUser()">$http POST</button>
+    <pre>{{newUser | json}}</pre>
+</div>
+</body>
+</html>

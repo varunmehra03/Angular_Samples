@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <script src="../../Scripts/angular.js"></script>
+</head>
+<body>
+    <h1>$touched and $submitted in Angular js 1.3 new feature</h1>
+    <h3>The message in the preceding code will be displayed once the field notices a pair of
+focus/blur events.</h3>
+    <hr />
+    <div ng-app="myApp">
+        <form name="playerForm">
+            <input type="text"
+                   name="playerName"
+                   ng-model="player.name" />
+        </form>
+        <div ng-if="playerForm.playerName.$touched">
+            You touched the playerName field
+        </div>
+    </div>
+
+    <h1>$submitted Demo</h1>
+    <h3>The message in the preceding code will be displayed after a submit attempt.</h3>
+    <hr />
+    <div ng-app="myApp">
+        <form name="playerForm">
+            <input type="text"
+                   name="playerName"
+                   ng-model="player.name" />
+            <button type="submit">Submit</button>
+        </form>
+        <div ng-if="playerForm.$submitted">
+            You clicked submit
+        </div>
+    </div>
+</body>
+</html>
